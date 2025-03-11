@@ -1,13 +1,15 @@
 import Image from "next/image";
 import React from "react";
 import { MdOutlineTimer } from "react-icons/md";
+import { BiDish } from "react-icons/bi";
+
 
 export default function HeroSection() {
   return (
     <div className="flex flex-col lg:flex-row gap-6 py-8 px-4 max-w-7xl mx-auto mt-20">
       {/* Left side - Recipe info */}
       <div className="flex-1 flex flex-col justify-center">
-        <div className="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full w-fit text-sm font-medium mb-4">
+        <div className="bg-rose-200 text-rose-500 px-4 py-1 rounded-full w-fit text-sm font-medium mb-4">
           RECIPE OF THE DAY
         </div>
 
@@ -19,18 +21,13 @@ export default function HeroSection() {
 
         <div className="flex items-center gap-6 mb-6">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full overflow-hidden">
-              <Image
-                src="/images/avatar.jpg"
-                alt="John Carter"
-                width={40}
-                height={40}
-              />
-            </div>
-            <span className="font-medium">John Carter</span>
+          <div className="flex items-center gap-2 text-gray bg-white p-3">
+            <BiDish size={20} />
+            <span>Italian</span>
           </div>
-
-          <div className="flex items-center gap-2 text-gray- bg-white p-3">
+          </div>
+            
+          <div className="flex items-center gap-2 text-gray bg-white p-3">
             <MdOutlineTimer size={20} />
             <span>1 hour and 30 mins</span>
           </div>
@@ -43,10 +40,10 @@ export default function HeroSection() {
         </p>
 
         <div className="flex gap-4">
-          <button className="bg-indigo-600 text-white px-6 py-3 rounded-full flex items-center gap-2">
+          <button className="bg-rose-500 text-white px-6 py-3 rounded-full flex items-center gap-2">
             Cook Now
           </button>
-          <button className="bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-full flex items-center gap-2">
+          <button className="bg-teal-500 border border-gray-300 text-white px-6 py-3 rounded-full flex items-center gap-2">
             Explore Recipes
           </button>
         </div>
