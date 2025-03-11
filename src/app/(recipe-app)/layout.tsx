@@ -1,4 +1,5 @@
-import "./globals.css";
+import Navbar from "@component/component/navbar";
+import "../globals.css";
 
 export const metadata = {
   title: "Tasty Tales",
@@ -11,10 +12,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-gradient-to-r from-red-50 to-amber-50">
-        {children}
-      </body>
-    </html>
+    <>
+      <Navbar />
+      {children}
+    </>
   );
 }
