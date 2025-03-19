@@ -12,7 +12,7 @@ export default function HeroSection() {
           RECIPE OF THE DAY
         </div>
 
-        <h1 className="text-5xl font-bold mb-6">
+        <h1 className="text-5xl font-semibold text-gray-700 mb-6">
           Spinach and
           <br />
           Feta Egg Muffins
