@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import { IoIosPricetags } from "react-icons/io";
+import { HiArrowLongRight } from "react-icons/hi2";
+import { IoIosPricetags, IoMdArrowForward } from "react-icons/io";
 
 interface pricingInterface {
   id: number;
@@ -24,13 +25,27 @@ const PricingCard = ({
         <div className="p-8">
           <h3 className="text-slate-900 text-2xl font-semibold mb-3">{name}</h3>
           <h1 className="text-5xl font-bold">{price}</h1>
-          <div className="text-slate-500 text-lg font-medium leading-relaxed">
+          <hr className="h-px my-8 bg-cyan-200 border-0 shadow-sm" />
+          <div className="text-slate-500 text-lg font-medium leading-relaxed mt-10">
             {description.map((description: any, i: any) => (
               <ul key={i} className="list-disc pl-4 space-y-0">
-                <li className="m-0 p-0">{description}</li>
+                <li className="m-0 p-0 text-base mt-2">{description}</li>
               </ul>
             ))}
           </div>
+
+          <button className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-zinc-300 group mt-5 w-full">
+            <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-150 ease-in-out bg-teal-600 group-hover:h-full" />
+            <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
+              <HiArrowLongRight size={30} />
+            </span>
+            <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
+              <HiArrowLongRight className=" text-green-400" size={30} />
+            </span>
+            <span className="relative w-full text-center font-semibold transition-colors duration-200 ease-in-out group-hover:text-white">
+              Get the plan
+            </span>
+          </button>
         </div>
       </div>
     </div>
