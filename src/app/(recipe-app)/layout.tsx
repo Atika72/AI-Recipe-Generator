@@ -1,4 +1,3 @@
-import Navbar from "@component/component/navbar";
 import "../globals.css";
 
 export const metadata = {
@@ -11,10 +10,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <Navbar />
-      {children}
-    </>
-  );
+  return <>= {children}</>;
 }

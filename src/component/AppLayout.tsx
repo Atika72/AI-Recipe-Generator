@@ -1,4 +1,5 @@
 import Navbar from "@component/component/navbar";
+import Footer from "./Footer";
 
 export const metadata = {
   title: "Tasty Tales",
@@ -7,9 +8,12 @@ export const metadata = {
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="max-w-7xl mx-auto">
-      <Navbar />
-      {children}
-    </div>
+    <>
+      <div className="max-w-7xl mx-auto">
+        <Navbar />
+        {children}
+      </div>
+      <Footer />
+    </>
   );
 }
