@@ -1,6 +1,14 @@
+"use client";
+import { signIn, signOut, useSession } from "next-auth/react";
 import React from "react";
 
 export default function page() {
+  const { data: session } = useSession();
+
+  if (session && session.user) {
+    return <button onClick={() => signOut()}>Sign Out</button>;
+  }
+
   return (
     <div className="flex flex-col justify-center items-center mt-44 px-4 pt-2">
       <div className="w-full max-w-sm">
@@ -35,6 +43,9 @@ export default function page() {
           </div>
           <div className="flex items-center justify-between">
             <button
+              onClick={() => {
+                signIn("google", { redirect: true, callbackUrl: "/" });
+              }}
               className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
             >

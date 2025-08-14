@@ -1,3 +1,4 @@
+import NextAuthSessionProvider from "@component/component/SessionProvider";
 import "./globals.css";
 
 export const metadata = {
@@ -13,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-gradient-to-r from-red-50 to-amber-50">
-        {children}
+        <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
       </body>
     </html>
   );
