@@ -7,16 +7,19 @@ interface pricingInterface {
   id: number;
   name: string;
   price: string;
+  time?: string;
   description: any;
 }
 
 const PricingCard = ({
   name,
   price,
+  time,
   description,
 }: {
   name: string;
   price: string;
+  time?: string;
   description: any;
 }) => {
   return (
@@ -24,7 +27,10 @@ const PricingCard = ({
       <div className="rounded-2xl overflow-hidden transition-all duration-1000 hover:shadow-[0_10px_20px_rgba(20,_184,_166,_1)] border border-teal-400">
         <div className="p-8">
           <h3 className="text-slate-900 text-2xl font-semibold mb-3">{name}</h3>
-          <h1 className="text-5xl font-bold">{price}</h1>
+          <h1 className="text-5xl font-bold">{price.split("/")[0]}
+            <span className="text-slate-900 text-base font-bold mt-5">{time}</span>
+          </h1>
+          
           <hr className="h-px my-8 bg-cyan-200 border-0 shadow-sm" />
           <div className="text-slate-500 text-lg font-medium leading-relaxed mt-10">
             {description.map((description: any, i: any) => (
@@ -68,6 +74,7 @@ export default function PricingSection() {
       id: 2,
       name: "Pro Plan",
       price: "$9.99",
+      time: "/month",
       description: [
         "Access to 5 AI-generated recipes per week",
         "Basic meal customization (limited ingredient swaps)",
@@ -78,6 +85,7 @@ export default function PricingSection() {
       id: 3,
       name: "Premium Plan",
       price: "$100.00",
+      time: "/year",
       description: [
         "Access to 5 AI-generated recipes per week.",
         "Basic meal customization (limited ingredient swaps).",
@@ -107,6 +115,7 @@ export default function PricingSection() {
               <PricingCard
                 name={pricingData.name}
                 price={pricingData.price}
+                time={pricingData.time}
                 description={pricingData.description}
               />
             </div>

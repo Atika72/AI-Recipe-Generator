@@ -31,7 +31,7 @@ export const authOptions: NextAuthOptions = {
           return true;
         }
         console.log("User already exists or was not created:", user.email);
-        return false;
+        return true;//false
       } catch (error) {
         console.error("Error during sign-in:", error);
         return false;
